@@ -26,9 +26,9 @@ Finally, Dutch universities provided csv files with output from their CRIS syste
 
 ## Workflow description
 
-The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, each generate an intermediate table in Google Big Query with the results of that particular query for each record in the dataset (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv file. 
+The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, each generate an intermediate table in Google Big Query with the results of that particular query for each record in the dataset (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
-All scripts are annotated to explain the different parts of the code. [in progress[ 
+All scripts are annotated to explain the different parts of the code. [in progress]
 
 ### Step 1 
 [ukri_oa_baseline_query_1_corpus.sql](/src/sql/ukri_oa_baseline_query_1_corpus.sql) - collect bibliographic metadata for UKRI-funded and UK-affiliated journal articles from Gateway to Research, Crossref and OpenAlex (limited to publications with Crossref DOI)
