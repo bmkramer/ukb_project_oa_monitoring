@@ -19,7 +19,6 @@ The scripts use the following data sources included in the COKI Google Big Query
 In addition, a number of supplementary open data sources were manually added to the Google Big Query environment for this project. 
 These are included in this repository in the folder [supplementary_sources](/supplementary_sources)
 
-- **Crossref member data** - Crossref member IDs and publisher names, created by querying Crossref member route API (https://api.crossref.org/swagger-ui/index.html#/Members) on 2024-01-23 (1 csv file).
 - **DOAJ journal metadata** - Journal metadata provided by DOAJ in CSV-format (https://doaj.org/docs/public-data-dump/), downloaded on 2023-12-31 (1 csv file).
 - **ISSN-L table**  - Table provided by the ISSN International Centre matching ISSNs to ISSN-L (https://www.issn.org/services/online-services/access-to-issn-l-table/), downloaded on 2024-03-26 by Jorden Esser (TU Delft) (1 csv file)
 
