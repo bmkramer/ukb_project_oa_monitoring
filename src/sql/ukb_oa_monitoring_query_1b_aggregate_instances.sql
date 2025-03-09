@@ -7,13 +7,6 @@
 --------------------------------------------------------------------------------------
 
 
---- import table
-WITH TABLE_INSTANCE AS (
-
-SELECT * FROM `UKB_OA_2023.all_2023_instance`
-
-),
-
 -- aggregate all uuids (with all variables) under each doi
 ---also aggregate org_agg as separate variable
 TABLE_INSTANCE_AGG AS (
@@ -38,7 +31,7 @@ funding,
 corresponding)) as instance,
 ARRAY_AGG(org_agg) as org_agg
 
-FROM TABLE_INSTANCE
+FROM `UKB_OA_2023.all_2023_instance`
 WHERE doi_cleaned is not null
 
 GROUP BY doi_cleaned
