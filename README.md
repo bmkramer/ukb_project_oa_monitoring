@@ -19,7 +19,7 @@ The scripts use the following data sources included in the COKI Google Big Query
 In addition, a number of supplementary open data sources were manually added to the Google Big Query environment for this project. 
 These are included in this repository in the folder [supplementary_sources](/supplementary_sources)
 
-- **DOAJ journal metadata** - Journal metadata provided by DOAJ in CSV-format (https://doaj.org/docs/public-data-dump/), downloaded on 2023-12-31 (1 csv file).
+- **DOAJ journal metadata** - Journal metadata provided by DOAJ in CSV-format (https://doaj.org/docs/public-data-dump/), downloaded on 2023-12-31 (1 csv file). Data provided by DOAJ under a [CC BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/). 
 - **ISSN-L tables**  - Tables provided by the ISSN International Centre reciprocally matching ISSNs to ISSN-L (https://www.issn.org/services/online-services/access-to-issn-l-table/), downloaded on 2024-03-26 (3 txt files)
 
 Finally, Dutch universities provided csv files with output from their CRIS systems which were used as to create the corpus of research outputs (peer-reviewed articles with Crossref DOI only). The individual files as provided by universities are not included in this repository, but relevant metadata from these files is included in the dataset resulting from the project. 
