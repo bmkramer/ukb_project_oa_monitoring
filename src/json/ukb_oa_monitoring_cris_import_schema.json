@@ -1,0 +1,67 @@
+[
+  {
+    "name": "uuid",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "umc",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "org_ror",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "org_name",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "issn_unidentified",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "e_issn",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "issn",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "doi",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "hoop",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "kuoz",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "taverne",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "funding",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "corresponding",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
