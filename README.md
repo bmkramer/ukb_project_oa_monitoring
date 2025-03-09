@@ -30,8 +30,9 @@ The SQL scripts in this repository, when run in the COKI Google Big Query enviro
 
 All scripts are annotated to explain the different parts of the code. [in progress]
 
-### Step 1 
-[ukri_oa_baseline_query_1_corpus.sql](/src/sql/ukri_oa_baseline_query_1_corpus.sql) - collect bibliographic metadata for UKRI-funded and UK-affiliated journal articles from Gateway to Research, Crossref and OpenAlex (limited to publications with Crossref DOI)
+### Step 1 - combine CRIS data 
+- [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
+- [ukri_oa_baseline_query_1_corpus.sql](/src/sql/ukri_oa_baseline_query_1_corpus.sql) - collect bibliographic metadata for UKRI-funded and UK-affiliated journal articles from Gateway to Research, Crossref and OpenAlex (limited to publications with Crossref DOI)
 ### Step 2
 [ukri_oa_baseline_query_2_oa_classification.sql](/src/sql/ukri_oa_baseline_query_2_oa_classification.sql) - for each record, collect open access information from Unpaywall
 ### Step 3
