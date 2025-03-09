@@ -3,7 +3,7 @@
 ---------------------------------
 
 --------------------------------------------------------------------------------------
---- STEP 2A - Add ISSNs from Crossref, match to ISSN-L 
+--- STEP 2B - Add ISSNs from Crossref, match to ISSN-L 
 --------------------------------------------------------------------------------------
 
 
@@ -33,7 +33,7 @@ b.issn_l
 
 FROM (SELECT * FROM TABLE_CR_ISSN, UNNEST (issns) as issn) as a
 LEFT JOIN `UKB_OA_2023.issn_to_issn_l_20240326` as b
-ON UPPER(TRIM(a.issn)) = UPPER(TRIM(b.issn_l))
+ON UPPER(TRIM(a.issn)) = UPPER(TRIM(b.issn))
 ),
 
 
