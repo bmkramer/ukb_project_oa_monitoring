@@ -32,20 +32,20 @@ All scripts are annotated to explain the different parts of the code. [in progre
 
 ### Step 1 - combine CRIS data 
 - [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
-- [ukri_oa_baseline_query_1_corpus.sql](/src/sql/ukri_oa_baseline_query_1_corpus.sql) - collect bibliographic metadata for UKRI-funded and UK-affiliated journal articles from Gateway to Research, Crossref and OpenAlex (limited to publications with Crossref DOI)
+- [ukb_oa_monitoring_query_1a_corpus.sql](/src/sql/ukri_oa_baseline_query_1_corpus.sql) - collect bibliographic metadata for UKRI-funded and UK-affiliated journal articles from Gateway to Research, Crossref and OpenAlex (limited to publications with Crossref DOI)
 ### Step 2
-[ukri_oa_baseline_query_2_oa_classification.sql](/src/sql/ukri_oa_baseline_query_2_oa_classification.sql) - for each record, collect open access information from Unpaywall
+[ukb_oa_monitoring_query_2_oa_classification.sql](/src/sql/ukri_oa_baseline_query_2_oa_classification.sql) - for each record, collect open access information from Unpaywall
 ### Step 3
-[ukri_oa_baseline_query_3_publishers.sql](/src/sql/ukri_oa_baseline_query_3_publishers.sql) - for each record, collect publisher information from Crossref
+[ukb_oa_monitoring_query_3_publishers.sql](/src/sql/ukri_oa_baseline_query_3_publishers.sql) - for each record, collect publisher information from Crossref
 ### Step 4
-[ukri_oa_baseline_query_4_collaborations.sql](/src/sql/ukri_oa_baseline_query_4_collaborations.sql) - for each record, collect information on national and international collaborations from OpenAlex
+[ukb_oa_monitoring_query_4_collaborations.sql](/src/sql/ukri_oa_baseline_query_4_collaborations.sql) - for each record, collect information on national and international collaborations from OpenAlex
 ### Step 5
-[ukri_oa_baseline_query_5_citations.sql](/src/sql/ukri_oa_baseline_query_5_citations.sql) - for each record, collect citation information from OpenAlex
+[ukb_oa_monitoring_query_5_citations.sql](/src/sql/ukri_oa_baseline_query_5_citations.sql) - for each record, collect citation information from OpenAlex
 ### Step 6
-[ukri_oa_baseline_query_6_views_downloads.sql](/src/sql/ukri_oa_baseline_query_6_views_downloads.sql) - for each record, collect usage information (views and downloads) from IRUS-UK
+[ukb_oa_monitoring_query_6_views_downloads.sql](/src/sql/ukri_oa_baseline_query_6_views_downloads.sql) - for each record, collect usage information (views and downloads) from IRUS-UK
 ### Step 7
-[ukri_oa_baseline_query_7_event_data.sql](/src/sql/ukri_oa_baseline_query_7_event_data.sql) - for each record, collect altmetrics information (Twitter, newsfeeds, Reddit links, Wikipedia) from Crossref Event Data
+[ukb_oa_monitoring_query_7_event_data.sql](/src/sql/ukri_oa_baseline_query_7_event_data.sql) - for each record, collect altmetrics information (Twitter, newsfeeds, Reddit links, Wikipedia) from Crossref Event Data
 ### Step 8
-[ukri_oa_baseline_query_8_fields.sql](/src/sql/ukri_oa_baseline_query_8_fields.sql) - for each record, collect subject classification from OpenAlex
+[ukb_oa_monitoring_query_8_fields.sql](/src/sql/ukri_oa_baseline_query_8_fields.sql) - for each record, collect subject classification from OpenAlex
 ### Step 9
-[ukri_oa_baseline_query_9_combine_data.sql](/src/sql/ukri_oa_baseline_query_9_combine_data.sql) - combine all intermediate files by matching on DOI
+[ukb_oa_monitoring_query_9_combine_data.sql](/src/sql/ukri_oa_baseline_query_9_combine_data.sql) - combine all intermediate files by matching on DOI
