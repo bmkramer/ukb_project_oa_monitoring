@@ -26,9 +26,9 @@ Finally, Dutch universities provided csv files with output from their CRIS syste
 
 ## Workflow description
 
-The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate temporary intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc) added to the dataset created in the previous step. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
+The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
-All scripts are annotated to explain the different parts of the code. [in progress]
+Scripts are annotated to explain the different parts of the code.
 
 ### Step 1 - combine CRIS data 
 - [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
@@ -41,16 +41,13 @@ All scripts are annotated to explain the different parts of the code. [in progre
 ### Step 3 - add Unpaywall data
 [ukb_oa_monitoring_query_3_add_unpaywall_data.sql](/src/sql/ukb_oa_monitoring_query_3_add_unpaywall_data.sql) - add OA data from Unpaywall, calculate embargo for each repository location
 ### Step 4 - add OA classification 
-- [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA type clossification
-- 
-- 
+- [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA types
+- [ukb_oa_monitoring_query_4b_add_license_classification.sql](/src/sql/ukb_oa_monitoring_query_4b_add_license_classification.sql) - add OA license classification
+- [ukb_oa_monitoring_query_4c_add_embargo_classification.sql](/src/sql/ukb_oa_monitoring_query_4c_add_embargo_classification.sql) - add OA embargo classification, include Taverne information
 ### Step 5
-[ukb_oa_monitoring_query_5_citations.sql](/src/sql/ukri_oa_baseline_query_5_citations.sql) - for each record, collect citation information from OpenAlex
-### Step 6
-[ukb_oa_monitoring_query_6_views_downloads.sql](/src/sql/ukri_oa_baseline_query_6_views_downloads.sql) - for each record, collect usage information (views and downloads) from IRUS-UK
-### Step 7
-[ukb_oa_monitoring_query_7_event_data.sql](/src/sql/ukri_oa_baseline_query_7_event_data.sql) - for each record, collect altmetrics information (Twitter, newsfeeds, Reddit links, Wikipedia) from Crossref Event Data
-### Step 8
-[ukb_oa_monitoring_query_8_fields.sql](/src/sql/ukri_oa_baseline_query_8_fields.sql) - for each record, collect subject classification from OpenAlex
-### Step 9
 [ukb_oa_monitoring_query_9_combine_data.sql](/src/sql/ukri_oa_baseline_query_9_combine_data.sql) - combine all intermediate files by matching on DOI
+
+
+Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level
+
+[to be added]
