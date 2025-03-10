@@ -44,14 +44,10 @@ Scripts are annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA types
 - [ukb_oa_monitoring_query_4b_add_license_classification.sql](/src/sql/ukb_oa_monitoring_query_4b_add_license_classification.sql) - add OA license classification
 - [ukb_oa_monitoring_query_4c_add_embargo_classification.sql](/src/sql/ukb_oa_monitoring_query_4c_add_embargo_classification.sql) - add OA embargo classification, include Taverne information
- 
 ### Step 5
-[ukb_oa_monitoring_query_5_citations.sql](/src/sql/ukri_oa_baseline_query_5_citations.sql) - for each record, collect citation information from OpenAlex
-### Step 6
-[ukb_oa_monitoring_query_6_views_downloads.sql](/src/sql/ukri_oa_baseline_query_6_views_downloads.sql) - for each record, collect usage information (views and downloads) from IRUS-UK
-### Step 7
-[ukb_oa_monitoring_query_7_event_data.sql](/src/sql/ukri_oa_baseline_query_7_event_data.sql) - for each record, collect altmetrics information (Twitter, newsfeeds, Reddit links, Wikipedia) from Crossref Event Data
-### Step 8
-[ukb_oa_monitoring_query_8_fields.sql](/src/sql/ukri_oa_baseline_query_8_fields.sql) - for each record, collect subject classification from OpenAlex
-### Step 9
 [ukb_oa_monitoring_query_9_combine_data.sql](/src/sql/ukri_oa_baseline_query_9_combine_data.sql) - combine all intermediate files by matching on DOI
+
+
+Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level
+
+[to be added]
