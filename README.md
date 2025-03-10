@@ -28,7 +28,7 @@ Finally, Dutch universities provided csv files with output from their CRIS syste
 
 The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
-Scripts are annotated to explain the different parts of the code.
+Scripts are lightly annotated to explain the different parts of the code.
 
 ### Step 1 - combine CRIS data 
 - [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
@@ -39,13 +39,17 @@ Scripts are annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_2b_add_issn.sql](/src/sql/ukri_oa_baseline_query_2b_add_issn.sql) - add ISSNs from Crossref, match to ISSN-L 
 - [ukb_oa_monitoring_query_2c_add_doaj_metadata.sql](/src/sql/ukri_oa_baseline_query_2c_add_doaj_metadata.sql) - add metadata from DOAJ, match on ISSN/ISSN-L 
 ### Step 3 - add Unpaywall data
-[ukb_oa_monitoring_query_3_add_unpaywall_data.sql](/src/sql/ukb_oa_monitoring_query_3_add_unpaywall_data.sql) - add OA data from Unpaywall, calculate embargo for each repository location
+- [ukb_oa_monitoring_query_3_add_unpaywall_data.sql](/src/sql/ukb_oa_monitoring_query_3_add_unpaywall_data.sql) - add OA data from Unpaywall, calculate embargo for each repository location
 ### Step 4 - add OA classification 
 - [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA types
 - [ukb_oa_monitoring_query_4b_add_license_classification.sql](/src/sql/ukb_oa_monitoring_query_4b_add_license_classification.sql) - add OA license classification
 - [ukb_oa_monitoring_query_4c_add_embargo_classification.sql](/src/sql/ukb_oa_monitoring_query_4c_add_embargo_classification.sql) - add OA embargo classification, include Taverne information
 ### Step 5
-[ukb_oa_monitoring_query_9_combine_data.sql](/src/sql/ukri_oa_baseline_query_9_combine_data.sql) - combine all intermediate files by matching on DOI
+- [ukb_oa_monitoring_query_5a_create_base_table.sql](/src/sql/ukb_oa_monitoring_query_5a_create_base_table.sql) - create base table for export (non-flat structure)
+- [ukb_oa_monitoring_query_5b_ungroup_variables.sql](/src/sql/ukb_oa_monitoring_query_5b_ungroup_variables.sql) - ungroup variables and create comma-separated strings
+- [ukb_oa_monitoring_query_5c_link_back_instances.sql](/src/sql/ukb_oa_monitoring_query_5c_link_back_instances.sql) - ungroup instances, link back to original instance data  
+- [ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql](/src/sql/ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql) - create export tables for institutions 
+- to be added: script to generate full dataset for export (pending decisions on included variables)
 
 
 Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level
