@@ -44,7 +44,7 @@ Scripts are lightly annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA types
 - [ukb_oa_monitoring_query_4b_add_license_classification.sql](/src/sql/ukb_oa_monitoring_query_4b_add_license_classification.sql) - add OA license classification
 - [ukb_oa_monitoring_query_4c_add_embargo_classification.sql](/src/sql/ukb_oa_monitoring_query_4c_add_embargo_classification.sql) - add OA embargo classification, include Taverne information
-### Step 5
+### Step 5 - create export datasets
 - [ukb_oa_monitoring_query_5a_create_base_table.sql](/src/sql/ukb_oa_monitoring_query_5a_create_base_table.sql) - create base table for export (non-flat structure)
 - [ukb_oa_monitoring_query_5b_ungroup_variables.sql](/src/sql/ukb_oa_monitoring_query_5b_ungroup_variables.sql) - ungroup variables and create comma-separated strings
 - [ukb_oa_monitoring_query_5c_link_back_instances.sql](/src/sql/ukb_oa_monitoring_query_5c_link_back_instances.sql) - ungroup instances, link back to original instance data  
