@@ -1,9 +1,9 @@
 ---------------------------------
---- Add OA classification (OA type, licenses, embargo)
+--- Add OA classification (OA type, licenses, embargo, Taverne)
 ---------------------------------
 
 --------------------------------------------------------------------------------------
---- STEP 4a - Add OA types
+--- STEP 4A - Add OA type classification
 --------------------------------------------------------------------------------------
 
 WITH TABLE AS (
