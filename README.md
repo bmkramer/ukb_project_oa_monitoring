@@ -38,10 +38,12 @@ All scripts are annotated to explain the different parts of the code. [in progre
 - [ukb_oa_monitoring_query_2a_add_crossref_metadata.sql](/src/sql/ukri_oa_baseline_query_2a_add_crossref_metadata.sql) - add metadata from Crossref (type, issued year, created date)
 - [ukb_oa_monitoring_query_2b_add_issn.sql](/src/sql/ukri_oa_baseline_query_2b_add_issn.sql) - add ISSNs from Crossref, match to ISSN-L 
 - [ukb_oa_monitoring_query_2c_add_doaj_metadata.sql](/src/sql/ukri_oa_baseline_query_2c_add_doaj_metadata.sql) - add metadata from DOAJ, match on ISSN/ISSN-L 
-### Step 3
+### Step 3 - add Unpaywall data
 [ukb_oa_monitoring_query_3_add_unpaywall_data.sql](/src/sql/ukb_oa_monitoring_query_3_add_unpaywall_data.sql) - add OA data from Unpaywall, calculate embargo for each repository location
-### Step 4
-[ukb_oa_monitoring_query_4_collaborations.sql](/src/sql/ukri_oa_baseline_query_4_collaborations.sql) - for each record, collect information on national and international collaborations from OpenAlex
+### Step 4 - add OA classification 
+- [ukb_oa_monitoring_query_4a_add_oa_types.sql](/src/sql/ukb_oa_monitoring_query_4a_add_oa_types.sql) - add OA type clossification
+- 
+- 
 ### Step 5
 [ukb_oa_monitoring_query_5_citations.sql](/src/sql/ukri_oa_baseline_query_5_citations.sql) - for each record, collect citation information from OpenAlex
 ### Step 6
