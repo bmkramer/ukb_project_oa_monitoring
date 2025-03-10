@@ -50,12 +50,12 @@ Scripts are lightly annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_5c_link_back_instances.sql](/src/sql/ukb_oa_monitoring_query_5c_link_back_instances.sql) - ungroup instances, link back to original instance data  
 - [ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql](/src/sql/ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql) - create export tables for institutions 
 - to be added: script to generate full dataset for export (pending decision on included variables)
-
-
+  
+  
 Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are currently using intermediate tables, but can be rewritten to use export table instead.
 
 ### Step 6 - aggregate counts
 - [ukb_oa_monitoring_query_6a_aggregate_oa_types.sql](/src/sql/ukb_oa_monitoring_query_6a_aggregate_oa_types.sql) - aggregate data - OA types
-- [ukb_oa_monitoring_query_6b_aggregate_licenses.sql](/src/sql/ukb_oa_monitoring_query_6b_aggregate_licenses.sql) - aggregate data - license summary
+- [ukb_oa_monitoring_query_6b_aggregate_licenses.sql](/src/sql/ukb_oa_monitoring_query_6b_aggregate_licenses.sql) - aggregate data - licenses
 - [ukb_oa_monitoring_query_6c_aggregate_license_summary.sql](/src/sql/ukb_oa_monitoring_query_6c_aggregate_license_summary.sql) - aggregate data - license summary
 - to be added: script to generate aggregate counts for embargo periods and Taverne
