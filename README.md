@@ -34,8 +34,10 @@ All scripts are annotated to explain the different parts of the code. [in progre
 - [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
 - [ukb_oa_monitoring_query_1a_combine_cris_data.sql](/src/sql/ukb_oa_monitoring_query_1a_combine_cris_data.sql) - combine imported CRIS tables, clean variables, add unique identifier
 - [ukb_oa_monitoring_query_1b_aggregate_instances.sql](/src/sql/ukb_oa_monitoring_query_1b_aggregate_instances.sql) - aggregate instances by DOI
-### Step 2
-[ukb_oa_monitoring_query_2_oa_classification.sql](/src/sql/ukri_oa_baseline_query_2_oa_classification.sql) - for each record, collect open access information from Unpaywall
+### Step 2 - add bibliographic data
+- [ukb_oa_monitoring_query_2a_add_crossref_metadata.sql](/src/sql/ukri_oa_baseline_query_2a_add_crossref_metadata.sql) - add metadata from Crossref (type, issued year, created date)
+- [ukb_oa_monitoring_query_2b_add_issn.sql](/src/sql/ukri_oa_baseline_query_2b_add_issn.sql) - add ISSNs from Crossref, match to ISSN-L 
+- [ukb_oa_monitoring_query_2c_add_doaj_metadata.sql](/src/sql/ukri_oa_baseline_query_2c_add_doaj_metadata.sql) - add metadata from DOAJ, match on ISSN/ISSN-L 
 ### Step 3
 [ukb_oa_monitoring_query_3_publishers.sql](/src/sql/ukri_oa_baseline_query_3_publishers.sql) - for each record, collect publisher information from Crossref
 ### Step 4
