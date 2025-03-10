@@ -22,11 +22,11 @@ These are included in this repository in the folder [supplementary_sources](/sup
 - **DOAJ journal metadata** - Journal metadata provided by DOAJ in CSV-format (https://doaj.org/docs/public-data-dump/), downloaded on 2023-12-31 (1 csv file). Data provided by DOAJ under a [CC BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/). 
 - **ISSN-L tables**  - Tables provided by the ISSN International Centre reciprocally matching ISSNs to ISSN-L (https://www.issn.org/services/online-services/access-to-issn-l-table/), downloaded on 2024-03-26 (3 txt files)
 
-Finally, Dutch universities provided csv files with output from their CRIS systems which were used as to create the corpus of research outputs (peer-reviewed articles with Crossref DOI only). The individual files as provided by universities are not included in this repository, but relevant metadata from these files is included in the dataset resulting from the project. 
+Finally, Dutch universities provided csv files with output from their CRIS systems, according to an agreed upon schema [add Zenodo link]. These were used to create the corpus of research outputs (peer-reviewed articles with Crossref DOI only) that formed the base of this project. The individual files as provided by universities are not included in this repository, but relevant metadata from these files is included in the dataset resulting from the project. 
 
 ## Workflow description
 
-The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
+The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc). The final SQL script combines these intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
 Scripts are lightly annotated to explain the different parts of the code.
 
