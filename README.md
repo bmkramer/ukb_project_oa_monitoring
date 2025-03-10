@@ -26,7 +26,7 @@ Finally, Dutch universities provided csv files with output from their CRIS syste
 
 ## Workflow description
 
-The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, each generate an intermediate table in Google Big Query with the results of that particular query for each record in the dataset (bibliographic metadata, open access classfication, etc). The final SQL script combines all intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
+The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate temporary intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc) added to the dataset created in the previous step. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
 All scripts are annotated to explain the different parts of the code. [in progress]
 
@@ -39,7 +39,7 @@ All scripts are annotated to explain the different parts of the code. [in progre
 - [ukb_oa_monitoring_query_2b_add_issn.sql](/src/sql/ukri_oa_baseline_query_2b_add_issn.sql) - add ISSNs from Crossref, match to ISSN-L 
 - [ukb_oa_monitoring_query_2c_add_doaj_metadata.sql](/src/sql/ukri_oa_baseline_query_2c_add_doaj_metadata.sql) - add metadata from DOAJ, match on ISSN/ISSN-L 
 ### Step 3
-[ukb_oa_monitoring_query_3_publishers.sql](/src/sql/ukri_oa_baseline_query_3_publishers.sql) - for each record, collect publisher information from Crossref
+[ukb_oa_monitoring_query_3_add_unpaywall_data.sql](/src/sql/ukb_oa_monitoring_query_3_add_unpaywall_data.sql) - add OA data from Unpaywall, calculate embargo for each repository location
 ### Step 4
 [ukb_oa_monitoring_query_4_collaborations.sql](/src/sql/ukri_oa_baseline_query_4_collaborations.sql) - for each record, collect information on national and international collaborations from OpenAlex
 ### Step 5
