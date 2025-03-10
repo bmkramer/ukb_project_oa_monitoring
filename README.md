@@ -49,7 +49,7 @@ Scripts are lightly annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_5b_ungroup_variables.sql](/src/sql/ukb_oa_monitoring_query_5b_ungroup_variables.sql) - ungroup variables and create comma-separated strings
 - [ukb_oa_monitoring_query_5c_link_back_instances.sql](/src/sql/ukb_oa_monitoring_query_5c_link_back_instances.sql) - ungroup instances, link back to original instance data  
 - [ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql](/src/sql/ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql) - create export tables for institutions 
-- to be added: script to generate full dataset for export (pending decisions on included variables)
+- to be added: script to generate full dataset for export (pending decision on included variables)
 
 
 Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level
