@@ -3,7 +3,7 @@
 ---------------------------------
 
 --------------------------------------------------------------------------------------
---- STEP 3 - Add OA data from Unpaywall 
+--- STEP 3 - Add OA data from Unpaywall, calculate embargo for each repository location
 --------------------------------------------------------------------------------------
 
 --- create table with selected variables from Unpaywall
