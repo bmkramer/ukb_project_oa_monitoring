@@ -52,6 +52,10 @@ Scripts are lightly annotated to explain the different parts of the code.
 - to be added: script to generate full dataset for export (pending decision on included variables)
 
 
-Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level
+Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are currently using intermediate tables, but can be rewritten to use export table instead.
 
-[to be added]
+### Step 6 - aggregate counts
+- [ukb_oa_monitoring_query_6a_aggregate_oa_types.sql](/src/sql/ukb_oa_monitoring_query_6a_aggregate_oa_types.sql) - aggregate data - OA types
+- [ukb_oa_monitoring_query_6b_aggregate_licenses.sql](/src/sql/ukb_oa_monitoring_query_6b_aggregate_licenses.sql) - aggregate data - license summary
+- [ukb_oa_monitoring_query_6c_aggregate_license_summary.sql](/src/sql/ukb_oa_monitoring_query_6c_aggregate_license_summary.sql) - aggregate data - license summary
+- to be added: script to generate aggregate counts for embargo periods and Taverne
