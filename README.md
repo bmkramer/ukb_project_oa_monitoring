@@ -36,7 +36,7 @@ In a future iteration, this setup could be further streamlined.
 Scripts are lightly annotated to explain the different parts of the code.
 
 ### Step 1 - combine CRIS data 
-- [ukb_oa_monitoring_cris_import_schema](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
+- [ukb_oa_monitoring_cris_import_schema.json](/src/json/ukb_oa_monitoring_cris_import_schema.json) - json schema used to import university-provided CRIS data into Google Big Query
 - [ukb_oa_monitoring_query_1a_combine_cris_data.sql](/src/sql/ukb_oa_monitoring_query_1a_combine_cris_data.sql) - combine imported CRIS tables, clean variables, add unique identifier
 - [ukb_oa_monitoring_query_1b_aggregate_instances.sql](/src/sql/ukb_oa_monitoring_query_1b_aggregate_instances.sql) - aggregate instances by DOI
 ### Step 2 - add bibliographic data
