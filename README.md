@@ -30,6 +30,9 @@ Finally, Dutch universities provided csv files with output from their CRIS syste
 
 The SQL scripts in this repository, when run in the COKI Google Big Query environment as described above, generate intermediate tables in Google Big Query with the results of that particular query (bibliographic metadata, open access classfication, etc). The final SQL script combines these intermediate files by matching on DOIs. The resulting final dataset containing all variables can then be exported from Google Big Query as csv or JSON file. 
 
+This modular set up was chosed by design to allow modfication of parts of the code without having to rerun the full workflow, and to keep the scripts more readable. 
+In a future iteration, this setup could be further streamlined. 
+
 Scripts are lightly annotated to explain the different parts of the code.
 
 ### Step 1 - combine CRIS data 
@@ -54,7 +57,7 @@ Scripts are lightly annotated to explain the different parts of the code.
 - to be added: script to generate full dataset for export (pending decision on included variables)
   
   
-Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are currently using intermediate tables, but can be rewritten to use export table instead.
+Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are currently using intermediate tables, but can be rewritten to use the final export table instead.
 
 ### Step 6 - aggregate counts
 - [ukb_oa_monitoring_query_6a_aggregate_oa_types.sql](/src/sql/ukb_oa_monitoring_query_6a_aggregate_oa_types.sql) - aggregate data - OA types
