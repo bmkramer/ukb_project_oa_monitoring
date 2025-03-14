@@ -5,7 +5,7 @@ Code documented here is used to generate the dataset accompanying the 2025 repor
 Report: [add link]  
 Dataset: [add link]
 
-[report and dataset are not published yet]
+[report and dataset are not published yet - code is already shared to support discussion on next steps]
 
 ## General description
 The repository contains JSON files and SQL scripts used to collect bibliographic metadata on research output (journal articles with Crossref DOIs only) published in 2023 as provided by Dutch universities from their CRIS systems, as well as data on open access availability. 
