@@ -3,7 +3,7 @@
 ---------------------------------
 
 --------------------------------------------------------------------------------------
---- STEP 4a - Add embargo classification, include Taverne information
+--- STEP 4c - Add embargo classification, include Taverne information
 --------------------------------------------------------------------------------------
 
 --- import selected variable from instance data to add embargo classification to
