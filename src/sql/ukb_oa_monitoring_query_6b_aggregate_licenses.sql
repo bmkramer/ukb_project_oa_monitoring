@@ -1,6 +1,6 @@
----------------------------------
---- Create aggregated data
----------------------------------
+---------------------------------------------------
+--- Create aggregated data - from structured table
+---------------------------------------------------
 
 --------------------------------------------------------------------------------------
 --- STEP 6B - Aggregated data - licenses
@@ -100,7 +100,7 @@ WHERE NOT org_agg = 'uvh'
 GROUP BY license
 ),
 
-
+--- join publisher licenses and repository licenses counts
 TABLE_AGG_JOIN AS (
 
 SELECT
