@@ -13,11 +13,12 @@ WITH TABLE AS (
 SELECT
 
 doi_cleaned,
-org_agg,
+instance.org_agg,
 oa_type
 
-FROM `UKB_OA_2023.all_2023_dois_oa_information`
-WHERE kuoz_a is true AND cr_included is true AND oa_type.oa_type_extended is not null
+FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as a,
+UNNEST(instance) as instance
+WHERE a.kuoz.kuoz_a is true AND crossref.cr_included is true AND oa_type.oa_type_extended is not null
 
 ),
 
@@ -28,7 +29,7 @@ SELECT
 doi_cleaned,
 l.license
 
-FROM `UKB_OA_2023.all_2023_dois_unpaywall` as b,
+FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as b,
 UNNEST (unpaywall.oa_locations) as l
 WHERE l.host_type = "publisher" AND l.version = "publishedVersion"
 ),
@@ -40,7 +41,7 @@ SELECT
 doi_cleaned,
 l.license
 
-FROM `UKB_OA_2023.all_2023_dois_unpaywall` as b,
+FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as b,
 UNNEST (unpaywall.oa_locations) as l
 WHERE l.host_type = "repository" AND l.version IN ('publishedVersion', 'acceptedVersion')
 ),
@@ -68,15 +69,13 @@ TABLE_AGG_PUBLISHER AS (
 SELECT
 
 IFNULL(license_publisher, "null") as license, -- temporary conversion to allow left join on 'null'
----count(doi_cleaned) as count,
----count(distinct doi_cleaned) as count_distinct_publisher,
 count(distinct if(oa_type.oa_type_compact = "gold_doaj_non_apc", doi_cleaned, null)) as gold_doaj_non_apc,
 count(distinct if(oa_type.oa_type_compact = "gold_doaj_apc", doi_cleaned, null)) as gold_doaj_apc,
 count(distinct if(oa_type.oa_type_compact = "gold_non_doaj", doi_cleaned, null)) as gold_non_doaj,
 count(distinct if(oa_type.oa_type_compact = "hybrid", doi_cleaned, null)) as hybrid
 
 
-FROM TABLE_LICENSE_JOIN, UNNEST (org_agg) as org_agg
+FROM TABLE_LICENSE_JOIN
 WHERE NOT org_agg = 'uvh'
 
 GROUP BY license
@@ -88,19 +87,16 @@ TABLE_AGG_GREEN_ACC_PUB AS (
 SELECT
 
 IFNULL(license_green_acc_pub, "null") as license,
-
----count(doi_cleaned) as count,
----count(distinct doi_cleaned) as count_distinct_green_acc_pub,
 count(distinct if(oa_type.oa_type_compact = "green_acc_pub_only", doi_cleaned, null)) as green_acc_pub_only,
 
 
-FROM TABLE_LICENSE_JOIN, UNNEST (org_agg) as org_agg
+FROM TABLE_LICENSE_JOIN
 WHERE NOT org_agg = 'uvh'
 
 GROUP BY license
 ),
 
---- join publisher licenses and repository licenses counts
+--- join licenses counts
 TABLE_AGG_JOIN AS (
 
 SELECT
@@ -127,4 +123,4 @@ ORDER BY hybrid DESC NULLS LAST --- order by hybrid as most populated - gives mo
 
 )
 
-SELECT * FROM TABLE_AGG_JOIN_NULLS
+SELECT * FROM TABLE_AGG_JOIN_NULLS 
