@@ -16,7 +16,7 @@ doi_cleaned,
 instance.org_agg,
 oa_type
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as a,
+FROM `UKB_OA_2023.all_2023_export_base_table` as a,
 UNNEST(instance) as instance
 WHERE a.kuoz.kuoz_a is true AND crossref.cr_included is true AND oa_type.oa_type_extended is not null
 
@@ -29,7 +29,7 @@ SELECT
 doi_cleaned,
 l.license
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as b,
+FROM `UKB_OA_2023.all_2023_export_base_table` as b,
 UNNEST (unpaywall.oa_locations) as l
 WHERE l.host_type = "publisher" AND l.version = "publishedVersion"
 ),
@@ -41,7 +41,7 @@ SELECT
 doi_cleaned,
 l.license
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as b,
+FROM `UKB_OA_2023.all_2023_export_base_table` as b,
 UNNEST (unpaywall.oa_locations) as l
 WHERE l.host_type = "repository" AND l.version IN ('publishedVersion', 'acceptedVersion')
 ),
