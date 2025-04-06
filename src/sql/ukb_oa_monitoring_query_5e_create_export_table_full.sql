@@ -73,7 +73,7 @@ TABLE_SELECT AS (
 SELECT
 
 doi_cleaned as doi,
-* EXCEPT (kuoz_other)
+* EXCEPT (doi_cleaned, kuoz_other)
 
 FROM TABLE_JOIN
 WHERE kuoz_a is true AND cr_included is true 
@@ -83,6 +83,6 @@ WHERE kuoz_a is true AND cr_included is true
 
 
 SELECT * FROM TABLE_SELECT
-ORDER BY doi_cleaned
+ORDER BY doi
 
 --- saved as `UKB_OA_2023.all_2023_export_table_full`
