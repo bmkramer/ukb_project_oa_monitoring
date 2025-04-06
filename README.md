@@ -1,11 +1,9 @@
 # UKB project Update OA monitoring - peer-reviewed articles [REPOSITORY IN PROGRESS]
 Code documented here is used to generate the dataset accompanying the 2025 report  
-*"Project vernieuwing open access monitoring - rapportage fase 1 - peer-reviewed artikelen" [in Dutch]*  
+*"Project vernieuwing open access monitoring - rapportage fase 1 - peer-reviewed artikelen"* [in Dutch]  
   
-Report: [add link]  
-Dataset: [add link]
-
-[report and dataset are not published yet - code is already shared to support discussion on next steps]
+Report: https://doi.org/10.5281/zenodo.15061685 [DOI not yet active]
+Dataset: https://doi.org/10.5281/zenodo.15164365
 
 ## General description
 The repository contains JSON files and SQL scripts used to collect bibliographic metadata on research output (journal articles with Crossref DOIs only) published in 2023 as provided by Dutch universities from their CRIS systems, as well as data on open access availability. 
