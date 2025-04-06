@@ -15,7 +15,7 @@ SELECT
 doi as doi_cleaned, --- to match script template
 * EXCEPT (doi)
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_table_full`
+FROM `UKB_OA_2023.all_2023_export_table_full`
 
 ),
 
