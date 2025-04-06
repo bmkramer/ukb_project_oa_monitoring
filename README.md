@@ -2,7 +2,7 @@
 Code documented here is used to generate the dataset accompanying the 2025 report  
 *"Project vernieuwing open access monitoring - rapportage fase 1 - peer-reviewed artikelen"* [in Dutch]  
   
-Report: https://doi.org/10.5281/zenodo.15061685 [DOI not yet active]
+Report: https://doi.org/10.5281/zenodo.15061685 [DOI not yet active]  
 Dataset: https://doi.org/10.5281/zenodo.15164365
 
 ## General description
