@@ -3,7 +3,7 @@ Code documented here is used to generate the dataset accompanying the 2025 repor
 *"Project vernieuwing open access monitoring - rapportage fase 1 - peer-reviewed artikelen"* [in Dutch]  
   
 Report: https://doi.org/10.5281/zenodo.15061685 [DOI not yet active]  
-Dataset: https://doi.org/10.5281/zenodo.15164365
+Dataset: https://doi.org/10.5281/zenodo.15164365 [DOI not yet active]
 
 ## General description
 The repository contains JSON files and SQL scripts used to collect bibliographic metadata on research output (journal articles with Crossref DOIs only) published in 2023 as provided by Dutch universities from their CRIS systems, as well as data on open access availability. 
