@@ -13,8 +13,6 @@ SELECT
 
 doi_cleaned,
 instance.org_agg,
-crossref.cr_included,
-unpaywall.upw_included,
 oa_type
 
 FROM `UKB_OA_2023.all_2023_export_base_table` as a,
