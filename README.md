@@ -55,10 +55,13 @@ Scripts are lightly annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_5c_link_back_instances.sql](/src/sql/ukb_oa_monitoring_query_5c_link_back_instances.sql) - ungroup instances, link back to original instance data  
 - [ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql](/src/sql/ukb_oa_monitoring_query_5d_create_export_tables_institutions.sql) - create export tables for institutions 
 - [ukb_oa_monitoring_query_5e_create_export_table_full.sql](/src/sql/ukb_oa_monitoring_query_5e_create_export_table_full.sql) - create full dataset for export 
-  
 <br>
 
-Separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are provided in two variants: using the structured base table resulting from **Step 5a** and using the flattened final export table resulting from **Step 5e** above. The latter is the final dataset resulting from this project. 
+Data dictionaries for the export tables for institutions (**Step 5d**) and the full dataset (**Step 5e**) are included in this repository in the folder [data_dictionaries](/data_dictionaries).
+ 
+<br>
+
+Finally, separate SQL scripts are provided to create aggregated OA information (OA types, licenses, embargoes) at national and institutional level. These are provided in two variants: using the structured base table resulting from **Step 5a** and using the flattened final export table resulting from **Step 5e** above. The latter is the final dataset resulting from this project. 
 
 ### Step 6 - aggregate counts - from structured base table
 - [ukb_oa_monitoring_query_6a_aggregate_oa_types.sql](/src/sql/ukb_oa_monitoring_query_6a_aggregate_oa_types.sql) - aggregate data - OA types
