@@ -66,12 +66,14 @@ USING(doi_cleaned)
 
 ),
 
+--- select variables for export
 --- only keep records classified as KUOZ-A by at least one organization and with Crossref DOI
 TABLE_SELECT AS (
 
 SELECT
 
-* 
+doi_cleaned as doi,
+* EXCEPT (kuoz_other)
 
 FROM TABLE_JOIN
 WHERE kuoz_a is true AND cr_included is true 
