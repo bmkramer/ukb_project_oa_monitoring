@@ -1,9 +1,9 @@
----------------------------------------------------
---- Create aggregated data - from structured table
----------------------------------------------------
+--------------------------------------------------------
+--- Create aggregated data - from flattened export table
+-------------------------------------------------------
 
 --------------------------------------------------------------------------------------
---- STEP 6B - Aggregated data - licenses
+--- STEP 7B - Aggregated data - licenses
 --------------------------------------------------------------------------------------
 
 --- NB Counts are non-exclusive counts (i.e. a doi can have multiple licenses if there are multiple OA versions)
@@ -16,7 +16,7 @@ SELECT
 doi as doi_cleaned, --- to match script template
 * EXCEPT (doi)
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_table_full`
+FROM `UKB_OA_2023.all_2023_export_table_full`
 
 ),
 
