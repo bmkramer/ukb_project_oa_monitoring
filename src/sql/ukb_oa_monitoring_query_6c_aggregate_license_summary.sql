@@ -17,7 +17,7 @@ instance.org_agg,
 oa_type,
 oa_license
 
-FROM `utrecht-university.UKB_OA_2023.all_2023_export_base_table` as a,
+FROM `UKB_OA_2023.all_2023_export_base_table` as a,
 UNNEST(instance) as instance
 WHERE a.kuoz.kuoz_a is true AND crossref.cr_included is true AND oa_type.oa_type_extended is not null
 
