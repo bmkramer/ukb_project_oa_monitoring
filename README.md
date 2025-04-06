@@ -1,4 +1,4 @@
-# UKB project Update OA monitoring - peer-reviewed articles [REPOSITORY IN PROGRESS]
+# UKB project Update OA monitoring - peer-reviewed articles
 Code documented here is used to generate the dataset accompanying the 2025 report  
 *"Project vernieuwing open access monitoring - rapportage fase 1 - peer-reviewed artikelen"* [in Dutch]  
   
