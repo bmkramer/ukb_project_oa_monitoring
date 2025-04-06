@@ -57,7 +57,7 @@ Scripts are lightly annotated to explain the different parts of the code.
 - [ukb_oa_monitoring_query_5e_create_export_table_full.sql](/src/sql/ukb_oa_monitoring_query_5e_create_export_table_full.sql) - create full dataset for export 
 <br>
 
-Data dictionaries for the export tables for institutions (**Step 5d**) and the full dataset (**Step 5e**) are included in this repository in the folder [data_dictionaries](/data_dictionaries).
+**Data dictionaries** for the export tables for institutions (**Step 5d**) and the full dataset (**Step 5e**) are included in this repository in the folder [data_dictionaries](/data_dictionaries).
  
 <br>
 
