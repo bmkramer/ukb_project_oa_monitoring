@@ -1,0 +1,41 @@
+Group	Field	Type	Source	Description												
+doi	doi_cleaned	string	centrally added	DOI as supplied by CRIS, cleaned and standardized (lower case, no url-prefixes)												
+instance	org_agg	string	CRIS	2-4 letter code for aggregated organization (university and umc, where applicable)												
+instance	org_name	string	CRIS	2-4 letter code for organization												
+instance	org_ror	string	CRIS	ROR id for organization												
+instance	umc	string	CRIS	yes/null, whether record is output of organization's umc (where applicable)												
+instance	kuoz	1 letter	CRIS	1-letter code, as supplied by organization												
+instance	taverne	string	CRIS	yes/no, as supplied by organization												
+kuoz	kuoz_a	boolean	centrally addded	whether the cleaned DOI is included as KUOZ type A by any organization												
+crossref	cr_included	boolean	centrally added	DOI included in Crossref												
+crossref	cr_type	string	Crossref	content type (using Crossref typology)												
+crossref	cr_issued_year	integer	Crossref	year of first publication date (print or online)												
+crossref	cr_created_date	date	Crossref	date when when DOI was first registered with Crossref												
+issn	issns	string, comma-separated	Crossref	ISSN(s) as retrieved from Crossref												
+issn	issn_l	string	ISSN	ISSN_L to which ISSNs are matched												
+doaj	doaj_id	string	DOAJ	journal id in DOAJ (from the field URL_in_DOAJ in DOAJ data snapshot)								-	-	-	-	
+doaj	doaj_apc	boolean	DOAJ	journal charges APCs (only for DOAJ journals)								-	-	-	-	-
+unpaywall	upw_included	boolean	Unpaywall	DOI included in Unpaywall								-	-	-	-	-
+unpaywall	journal_is_oa	boolean	Unpaywall	journal is fully open access (also included journals not in DOAJ)								-	-	-	-	-
+unpaywall	host_type	string, comma-separated	Unpaywall	publisher/repository; for all oa locations								-	-	-	-	-
+unpaywall	version	string, comma-separated	Unpaywall	publishedVersion/acceptedVersion/submittedVersion; for all oa locations								-	-	-	-	-
+unpaywall	license	string, comma-separated	Unpaywall	license; for all oa locations								-	-	-	-	-
+unpaywall	oa_date	string, comma-separated	Unpaywall	date repository version first made available oa; for all oa locations (null for publisher versions)												
+unpaywall	embargo_green_oa	string, comma-separated	centrally added	difference in months between Crossref created date and Unpaywall oa date; for all oa locations (null for publisher versions)												
+unpaywall	repository_institution	string, comma-separated	Unpaywall	name of repository institution; for all oa locations (null for publisher versions)												
+unpaywall	host_url	string, comma-separated	Unpaywall	domain of pdf url or landing page url; for all oa locations (null for publisher versions)												
+oa_classification	gold_doaj_non_apc	boolean	centrally added	journal included in DOAJ, journal does not charge APCs (diamond)												
+oa_classification	gold_doaj_apc	boolean	centrally added	journal included in DOAJ, journal charges APCs												
+oa_classification	gold_non_doaj	boolean	centrally added	open access journal not included in DOAJ												
+oa_classification	hybrid	boolean	centrally added	article with open access license in subscription journal												
+oa_classification	bronze	boolean	centrally added	article without open access license in subscription journal												
+oa_classification	green_acc_pub	boolean	centrally added	accepted/published version in repository												
+oa_classification	green_sub	boolean	centrally added	submitted version in repository												
+oa_classification	closed	boolean	centrally added	closed access												
+oa_type	oa_type_extended	string	centrally added	oa type, including bronze and green submitted version (values: gold_doaj_non_apc / gold_doaj_apc / gold_non_doaj / hybrid / bronze_only / bronze_and_green_acc_pub / green_acc_pub_only_no_bronze / green_sub_only / closed)												
+oa_type	oa_type_compact	string	centrally added	oa type, not including bronze and green submitted (values: gold_doaj_non_apc / gold_doaj_apc / gold_non_doaj / hybrid / green_acc_pub_only / non_oa)												
+oa_license	publisher_license	string	centrally added	license summary for publisher version, indicating whether publisher version has a cc-by license, another cc-license or a another license type (values: has_license, has_license_cc, has_license_cc_by, null)												
+oa_license	repository_acc_pub_license	string	centrally added	license summary for accepted/published version(s) in repository, indicating whether any repository version has a cc-by license, another cc-license or another license type (values: has_license, has_license_cc, has_license_cc_by, null)												
+oa_license	repository_sub_license	string	centrally added	license summary for submitted version(s) in repository, indicating whether any repository version has a cc-by license, another cc-license or another license type (values: has_license, has_license_cc, has_license_cc_by, null)												
+oa_embargo	embargo_green_acc_pub	integer	centrally added	shortest embargo (in months) for accepted/published version in a repository												
+oa_embargo	embargo_green_sub	integer	centrally added	shortest embargo (in months) for submitted version in a repository												
