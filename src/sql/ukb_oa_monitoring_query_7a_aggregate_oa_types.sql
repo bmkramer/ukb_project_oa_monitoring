@@ -15,78 +15,26 @@ SELECT
 doi as doi_cleaned, --- to match script template
 * EXCEPT (doi)
 
-FROM `UKB_OA_2023.all_2023_export_table_full`
+FROM `utrecht-university.UKB_OA_2023.all_2023_export_table_full`
 
 ),
 
 --- create structured base table with selected variables
 TABLE_BASE AS (
-  
-SELECT 
+SELECT
 
 doi_cleaned,
 SPLIT(org_agg, ",") as org_agg,
 STRUCT(oa_type_compact, oa_type_extended) as oa_type,
 STRUCT(publisher_license, repository_acc_pub_license) as oa_license
 
- FROM TABLE_IMPORT
+FROM TABLE_IMPORT
 
 ),
 
-
---- transform selected variables from comma-separated string into separate rows for each oa_location
-TABLE_OA_LOCATIONS_UNNEST AS (
-
-SELECT 
-
-a.doi_cleaned,
-b.host_type,
-c.version,
-d.license
-
-FROM TABLE_IMPORT as a
-LEFT JOIN (SELECT doi_cleaned, host_type, offset FROM TABLE_IMPORT, UNNEST(SPLIT(host_type, ",") ) as host_type WITH OFFSET AS offset ORDER BY offset) as b
-USING (doi_cleaned)
-LEFT JOIN (SELECT doi_cleaned, version, offset FROM TABLE_IMPORT, UNNEST(SPLIT(version, ",") ) as version WITH OFFSET AS offset ORDER BY offset) as c
-USING (doi_cleaned, offset)
-LEFT JOIN (SELECT doi_cleaned, license, offset FROM TABLE_IMPORT, UNNEST(SPLIT(license, ",") ) as version WITH OFFSET AS offset ORDER BY offset) as d
-USING (doi_cleaned, offset)
-
-),
-
---- combine all oa location variables into one structured variable 
-TABLE_OA_LOCATIONS_STRUCT AS (
-
-SELECT 
-
-doi_cleaned,
-ARRAY_AGG(STRUCT(
-host_type,
-version,
-license
-)) as oa_locations
-
-FROM TABLE_OA_LOCATIONS_UNNEST
-GROUP BY doi_cleaned
-
-),
-
---- join all variables to create structured base table
-TABLE_BASE_COMBINE AS (
-
-SELECT
-
-a.*,
-b.oa_locations
-
-FROM TABLE_BASE as a
-LEFT JOIN TABLE_OA_LOCATIONS_STRUCT as b
-USING (doi_cleaned)
-
-),
 
 -------------------------------------------------------------------------------
----- remainder of script reuses SQL script 6a on reconstructured structured table
+---- remainder of script reuses SQL script 6a on reconstructed structured table
 -------------------------------------------------------------------------------
 
 --- select variables, filter to records in scope
@@ -97,7 +45,7 @@ doi_cleaned,
 org_agg,
 oa_type
 
-FROM TABLE_BASE_COMBINE,
+FROM TABLE_BASE,
 UNNEST(org_agg) as org_agg
 WHERE oa_type.oa_type_extended is not null
 
@@ -186,4 +134,3 @@ SELECT * FROM TABLE_AGG_OA_EXT
 
 ----SELECT * FROM TABLE_AGG_ORG_OA_EXT
 ---SELECT * FROM TABLE_AGG_ORG_OA_COMPACT
-
