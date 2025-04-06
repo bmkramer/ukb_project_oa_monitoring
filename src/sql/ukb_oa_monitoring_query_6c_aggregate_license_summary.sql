@@ -7,6 +7,7 @@
 --------------------------------------------------------------------------------------
 
 --- NB Counts are exclusive counts (i.e. has_license does not include has_license_cc etc)
+--- calculation of percentages not included - can be added or done outside script
 
 --- select variables, filter to records in scope
 WITH TABLE AS (

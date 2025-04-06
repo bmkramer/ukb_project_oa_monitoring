@@ -6,6 +6,7 @@
 --- STEP 7A - Aggregated data - OA types 
 --------------------------------------------------------------------------------------
 
+--- calculation of percentages not included - can be added or done outside script
 
 --- import flat table
 WITH TABLE_IMPORT AS (

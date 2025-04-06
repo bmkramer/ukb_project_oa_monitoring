@@ -7,6 +7,7 @@
 --------------------------------------------------------------------------------------
 
 --- NB Counts are non-exclusive counts (i.e. a doi can have multiple licenses if there are multiple OA versions)
+--- calculation of percentages not included - can be added or done outside script
 
 --- select variables, filter to records in scope
 WITH TABLE AS (

@@ -7,6 +7,7 @@
 --------------------------------------------------------------------------------------
 
 --- NB Counts are non-exclusive counts (i.e. a doi can have multiple licenses if there are multiple OA versions)
+--- calculation of percentages not included - can be added or done outside script
 
 --- import flat table
 WITH TABLE_IMPORT AS (
@@ -235,4 +236,3 @@ SELECT * FROM TABLE_DOI_COUNT
 SELECT * FROM TABLE_UNION
 ORDER BY hybrid DESC NULLS LAST --- order by hybrid as most populated - gives most useful ordering of licenses
 
---- calculation of percentages not included - can be added or done outside script

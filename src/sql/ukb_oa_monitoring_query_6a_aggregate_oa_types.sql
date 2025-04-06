@@ -6,6 +6,7 @@
 --- STEP 6A - Aggregated data - OA types 
 --------------------------------------------------------------------------------------
 
+--- calculation of percentages not included - can be added or done outside script
 
 --- select variables, filter to records in scope
 WITH TABLE AS (
