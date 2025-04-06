@@ -12,13 +12,14 @@ WITH TABLE AS (
 SELECT
 
 doi_cleaned,
-org_agg,
-cr_included,
-upw_included,
+instance.org_agg,
+crossref.cr_included,
+unpaywall.upw_included,
 oa_type
 
-FROM `UKB_OA_2023.all_2023_dois_oa_information`
-WHERE kuoz_a is true AND cr_included is true AND oa_type.oa_type_extended is not null
+FROM `UKB_OA_2023.all_2023_export_base_table` as a,
+UNNEST(instance) as instance
+WHERE a.kuoz.kuoz_a is true AND crossref.cr_included is true AND oa_type.oa_type_extended is not null
 
 ),
 
@@ -28,9 +29,9 @@ TABLE_AGG_OA_EXT AS (
 SELECT
 
 oa_type.oa_type_extended,
-count(distinct doi_cleaned)
+count(distinct doi_cleaned) as count
 
-FROM TABLE, UNNEST (org_agg) as org_agg
+FROM TABLE
 WHERE NOT org_agg = 'uvh'
 
 GROUP BY oa_type_extended
@@ -42,16 +43,16 @@ TABLE_AGG_OA_COMPACT AS (
 SELECT
 
 oa_type.oa_type_compact,
-count(distinct doi_cleaned)
+count(distinct doi_cleaned) as count
 
-FROM TABLE, UNNEST (org_agg) as org_agg
+FROM TABLE
 WHERE NOT org_agg = 'uvh'
 
 GROUP BY oa_type_compact
 
 ),
 
---- calculate total aggregated OA values by institution
+--- calculate aggregated OA values by institution 
 TABLE_AGG_ORG_OA_EXT AS (
 
 SELECT
@@ -68,8 +69,7 @@ count(distinct if (oa_type.oa_type_extended = "green_sub_only", doi_cleaned, nul
 count(distinct if (oa_type.oa_type_extended = "green_acc_pub_only_no_bronze", doi_cleaned, null)) as green_acc_pub_only_no_bronze,
 count(distinct if (oa_type.oa_type_extended = "closed", doi_cleaned, null)) as closed
 
-FROM TABLE,
-UNNEST(org_agg) as org_agg
+FROM TABLE
 
 GROUP BY org_agg
 ORDER BY org_agg
@@ -89,8 +89,7 @@ count(distinct if (oa_type.oa_type_compact = "hybrid", doi_cleaned, null)) as hy
 count(distinct if (oa_type.oa_type_compact = "green_acc_pub_only", doi_cleaned, null)) as green_acc_pub_only,
 count(distinct if (oa_type.oa_type_compact = "non oa", doi_cleaned, null)) as non_oa
 
-FROM TABLE,
-UNNEST(org_agg) as org_agg
+FROM TABLE
 
 GROUP BY org_agg
 ORDER BY org_agg
@@ -102,5 +101,6 @@ ORDER BY org_agg
 SELECT * FROM TABLE_AGG_OA_EXT
 ---SELECT * FROM TABLE_AGG_OA_COMPACT
 
----SELECT * FROM TABLE_AGG_ORG_OA_EXT
+
+----SELECT * FROM TABLE_AGG_ORG_OA_EXT
 ---SELECT * FROM TABLE_AGG_ORG_OA_COMPACT
