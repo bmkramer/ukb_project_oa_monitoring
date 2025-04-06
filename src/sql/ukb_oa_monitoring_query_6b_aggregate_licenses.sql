@@ -121,6 +121,36 @@ FROM TABLE_AGG_JOIN
 
 ORDER BY hybrid DESC NULLS LAST --- order by hybrid as most populated - gives most useful ordering of licenses
 
+),
+
+--- calculate totals per oa_type to enable downstream calculation of percentages
+TABLE_DOI_COUNT AS (
+
+SELECT
+
+"unique_dois" as license, ---placeholder name to allow downstrem union
+count(distinct if(oa_type.oa_type_compact = "gold_doaj_non_apc", doi_cleaned, null)) as gold_doaj_non_apc,
+count(distinct if(oa_type.oa_type_compact = "gold_doaj_apc", doi_cleaned, null)) as gold_doaj_apc,
+count(distinct if(oa_type.oa_type_compact = "gold_non_doaj", doi_cleaned, null)) as gold_non_doaj,
+count(distinct if(oa_type.oa_type_compact = "hybrid", doi_cleaned, null)) as hybrid,
+count(distinct if(oa_type.oa_type_compact = "green_acc_pub_only", doi_cleaned, null)) as green_acc_pub_only
+
+FROM TABLE
+WHERE NOT org_agg = 'uvh'
+),
+
+--- add total counts to license counts
+TABLE_UNION AS (
+
+SELECT * FROM TABLE_AGG_JOIN_NULLS
+
+UNION ALL
+
+SELECT * FROM TABLE_DOI_COUNT
+
 )
 
-SELECT * FROM TABLE_AGG_JOIN_NULLS 
+SELECT * FROM TABLE_UNION
+ORDER BY hybrid DESC NULLS LAST --- order by hybrid as most populated - gives most useful ordering of licenses
+
+--- calculation of percentages not included - can be added or done outside script
